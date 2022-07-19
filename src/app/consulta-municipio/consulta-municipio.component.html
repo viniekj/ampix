@@ -1,0 +1,47 @@
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-6 mt-5">
+            <h1>Consultar Cliente</h1>
+            <form class="shadow p-3 mb-5 bg-white rounded">
+
+                <div class="form-group">
+                    <label for="codigo">Por código:</label>
+                    <input [(ngModel)]='codigoMunicipio' class="form-control" type="text" name="codigo" id="codigo" placeholder="Digite o código de município">
+                </div>
+                <button type="button" class="btn btn-primary  mb-0 m-3" (click)="findByCodigoMunicipio()">Confirmar</button>
+
+                <div class="form-group">
+                    <label for="nome">Por nome:</label>
+                    <input  [(ngModel)]='nomeMunicipio' class="form-control" type="text" name="nome" id="nome" placeholder="Digite o nome do município">
+                </div>
+                <button type="button" class="btn btn-primary  mb-3 m-3" (click)="findByNomeMunicipio()">Confirmar</button>
+
+                <div class="form-group">
+                    <label for="uf">Por Estado:</label>
+                    <input [(ngModel)]='ufMunicipio' class="form-control" type="text" name="uf" id="uf" placeholder="Digite o estado">
+                </div>
+                <button type="button" class="btn btn-primary  mb-0 m-3" (click)="findByUfMunicipio()">Confirmar</button>
+
+                
+                
+            </form>
+        </div>
+
+        <div *ngFor="let item of listarMunicipios">
+            <ul style="list-style:none">
+                <li>{{item.codigo}}</li>
+                <li>{{item.nome}}</li>
+                <li>{{item.uf}}</li>
+            </ul>
+        </div>
+        <div>
+            <ul style="list-style:none">
+                <li>{{mostrarMunicipio.codigo}}</li>
+                <li>{{mostrarMunicipio.nome}}</li>
+                <li>{{mostrarMunicipio.uf}}</li>
+            </ul>
+        </div>
+
+
+    </div>
+</div>

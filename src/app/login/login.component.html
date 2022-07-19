@@ -1,0 +1,39 @@
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-6 mt-5">
+            <h1>Consultar Cliente</h1>
+            <form class="shadow p-3 mb-5 bg-white rounded">
+                
+                <div class="form-group">
+                    <label for="codigo">Por código:</label>
+                    <input [(ngModel)]='codigoCliente' class="form-control" type="text" name="codigo" id="codigo" placeholder="Digite seu código">
+                </div>
+                <button type="button" class="btn btn-primary  mb-0 m-3" (click)="findByCodigoCliente()">Confirmar</button>
+                <div class="form-group">
+                    <label for="nome">Por nome:</label>
+                    <input  [(ngModel)]='nomeCliente' class="form-control" type="text" name="nome" id="nome" placeholder="Digite seu nome">
+                </div>
+                <button type="button" class="btn btn-primary  mb-3 m-3" (click)="findByNomeCliente()">Confirmar</button>
+
+            
+            </form>
+        </div>
+
+        <div *ngFor="let item of listarClientes">
+            <ul style="list-style:none">
+                <li>{{item.codigo}}</li>
+                <li>{{item.nome}}</li>
+                <li>{{item.endereco}}</li>
+            </ul>
+        </div>
+        <div>
+            <ul style="list-style:none">
+                <li>{{mostrarCliente.codigo}}</li>
+                <li>{{mostrarCliente.nome}}</li>
+                <li>{{mostrarCliente.endereco}}</li>
+            </ul>
+        </div>
+
+
+    </div>
+</div>

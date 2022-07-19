@@ -1,0 +1,51 @@
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-6 mt-5">
+            <h1>Cadastro Cliente</h1>
+            <form class="shadow p-3 mb-5 bg-white rounded">
+                <div class="form-group">
+                   <label for="nome">Nome:</label>
+                   <input [(ngModel)]="cliente.nome" class="form-control" type="text" name="nome" id="nome" placeholder="Digite seu nome">
+                </div>
+                <div class="form-group">
+                   <label for="codigo">Código:</label>
+                   <input [(ngModel)]="cliente.codigo" class="form-control" type="text" name="codigo" id="codigo" placeholder="Digite seu código">
+                </div>
+                <div class="form-group">
+                    <label for="endereco">Endereço:</label>
+                    <input [(ngModel)]="cliente.endereco" class="form-control" type="text" name="endereco" id="endereco" placeholder="Digite seu Endereço">
+                </div>
+                <div class="form-group">
+                    <label for="numero">Número:</label>
+                    <input [(ngModel)]="cliente.numero" class="form-control" type="text" name="numero" id="numero" placeholder="Digite seu Número">
+                </div>
+                <div class="form-group">
+                    <label for="bairro">Bairro:</label>
+                    <input [(ngModel)]="cliente.bairro" class="form-control" type="text" name="bairro" id="bairro" placeholder="Digite seu Bairro">
+                </div>
+                <div class="form-group">
+                    <label for="cep">CEP:</label>
+                    <input [(ngModel)]="cliente.cep" class="form-control" type="text" name="cep" id="cep" placeholder="Digite seu CEP">
+                </div>
+                <div class="form-group">
+                    <label for="municipio">Municipio:</label>
+                    <select [(ngModel)]="idMunicipio" (change)="findByIdMunicipio()" class="form-control" name="municipio" id="municipio">
+                        <option *ngFor="let item of listaMunicipios" value = '{{item.id}}'>{{item.nome}}/{{item.uf}}</option>
+                    </select>
+                </div>
+                
+            <div class="row">
+                <div class="col-6">
+                    <svg xmlns="http://www.w3.org/2000/svg"  width="32" height="32" fill="currentColor" class="bi bi-search mt-3 bg-primary text-white p-1 rounded" viewBox="0 0 16 16">
+                        <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                    </svg>
+                    <button type="button" class="btn btn-primary  mb-0 m-3" (click)='cadastrar()'>Confirmar</button>
+                </div>
+            </div>
+
+            </form>
+        </div>
+
+
+    </div>
+</div>
